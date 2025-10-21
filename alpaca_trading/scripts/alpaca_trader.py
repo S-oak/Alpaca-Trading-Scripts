@@ -6,13 +6,13 @@ via the Alpaca API. Prompts the user for a stock symbol, action
 (BUY/SELL), and quantity, then submits a market order.
 
 Usage:
-    python -m alpaca_trading.scripts.alpaca_trader
+    python -m scripts.alpaca_trader
 """
 
 from alpaca.trading.client import TradingClient
 from alpaca.trading.requests import MarketOrderRequest
 from alpaca.trading.enums import OrderSide, TimeInForce
-from alpaca_trading.config.keys import load_api_keys
+from config.keys import load_api_keys
 
 API_KEY, API_SECRET = load_api_keys()
 trading_client = TradingClient(API_KEY, API_SECRET, paper=True)
@@ -41,3 +41,4 @@ def place_trade(trading_client, symbol, qty, action):
 
 if __name__ == "__main__":
     main()
+
