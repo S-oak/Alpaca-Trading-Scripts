@@ -5,12 +5,12 @@ Fetches and displays the latest stock prices for a predefined list of symbols
 using the Alpaca Market Data API.
 
 Usage:
-    python -m scripts.price_check
+    python -m alpaca_trading.scripts.price_check
 """
 
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.requests import StockLatestQuoteRequest
-from config.keys import load_api_keys
+from alpaca_trading.config.keys import load_api_keys
 from tabulate import tabulate
 
 def main():
@@ -33,3 +33,4 @@ def main():
 if __name__ =="__main__":
 
     main()
+
